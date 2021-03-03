@@ -1,18 +1,9 @@
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 
-const INITIAL_STATE = [
-  {
-    id: 1,
-    name: 'audi'
-  },
-  {
-    id: 2,
-    name: 'bmw'
-  }
-]
+import carsReducer from './cars';
 
-const reducer = (state = INITIAL_STATE, action) => {
-  return state;
-}
+const rootReducer = combineReducers({
+  cars: carsReducer
+});
 
-export default createStore(reducer);
+export default createStore(rootReducer);

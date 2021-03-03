@@ -1,16 +1,12 @@
-import Routes from './routes';
-import {BrowserRouter} from 'react-router-dom';
-import { Provider } from 'react-redux';
-import store from './store';
+import React from 'react';
 
-function App() {
-  return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <Routes />
-      </BrowserRouter>
-    </Provider>
-  );
+import Layout from './layout';
+import Pages from './pages';
+
+export default function App() {
+	return (
+		<Layout>
+			<Pages />
+		</Layout>
+	);
 }
-
-export default App;
