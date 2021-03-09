@@ -1,3 +1,5 @@
+import { createAction } from '@reduxjs/toolkit';
+
 const INITIAL_STATE = {
   showMessage: false,
 };
@@ -13,19 +15,6 @@ export default (state = INITIAL_STATE, action) => {
   }
 };
 
-// Actions Types
-export const Types = {
-    SHOW_MESSAGE: 'SHOW_MESSAGE',
-    HIDE_MESSAGE: 'HIDE_MESSAGE',
-}
-
-// Action Creators
-export const Creators = {
-  showMessage: () => ({
-    type: Types.SHOW_MESSAGE,
-  }),
-  hideMessage: () => ({
-    type: Types.HIDE_MESSAGE,
-  }) 
-} 
+export const showMessage = createAction('SHOW_MESSAGE');
+export const hideMessage = createAction('HIDE_MESSAGE');
 
