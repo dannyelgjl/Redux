@@ -3,6 +3,7 @@ import Car from '../../components/Car';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllCars } from '../../store/fetchActions';
 import { addItem } from '../../store/ducks/cart';
+import { addMessage } from '../../store/ducks/layout';
 
 export default function List() {
  const cars = useSelector(state => state.cars);
@@ -14,6 +15,10 @@ export default function List() {
 
  const addItemCart = (car) => {
 	dispatch(addItem(car));
+
+	console.log(car.name);
+
+	dispatch(addMessage(`${car.name} adicionando com sucesso`));
 }
 
 	return (

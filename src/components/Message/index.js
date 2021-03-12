@@ -1,18 +1,22 @@
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { removeMessage } from '../../store/ducks/layout';
 
-const Message = () => {
-  const isShow = useSelector((state) => state.layout.showMessage);
+const Message = ({ message }) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch(removeMessage(message));
+    }, 2500);
+  }, [dispatch]);
 
   return (
-    <>
-      {isShow && (
-        <div className="container mt-3">
-          <div className="alert alert-success" role="alert">
-            Cadastro com sucesso!!!!
-          </div>
-        </div>
-      )}
-    </>
+    <div className="container mt-3">
+      <div className="alert alert-success" role="alert">
+        {message}
+      </div>
+    </div>
   );
 }
 

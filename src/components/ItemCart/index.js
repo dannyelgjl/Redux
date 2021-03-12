@@ -10,7 +10,7 @@ const ItemCart = ({ item, removeItemCart }) => {
                 </div>
                 <button 
                     className="btn btn-danger" 
-                    onClick={() => removeItemCart(item._id)}
+                    onClick={() => removeItemCart(item)}
                     style={{ width: 50, position: 'absolute', bottom: 15, right: 15 }}
                     > 
                     <i className="fa fa-trash fa-2x"/>
